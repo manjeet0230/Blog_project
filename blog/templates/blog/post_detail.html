@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="col-sm-10 px-5">
+    <h3 class="text-white my-5 heading" style="margin-bottom: 10px;">{{ post.title }}</h3>
+<p class="text-white" style="margin-bottom: 10px;">Posted by {{ post.author }} on {{ post.created_at }}</p>
+
+
+<div class="card bg-dark mt-3">
+
+        <div class="card-body">
+            {{ post.body|safe }}
+        </div>
+    </div>
+
+    
+    <a href="{% url 'dashboard' %}" class="btn btn-primary mt-3">Back to Dashboard</a>
+</div>
+{% endblock content %}
